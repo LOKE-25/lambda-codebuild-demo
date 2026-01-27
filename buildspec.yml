@@ -13,8 +13,7 @@ phases:
       - zip -r function.zip index.js
 
   post_build:
-    commands:
-      - echo "Deploying to Lambda"
-      - aws lambda update-function-code \
-          --function-name lambda-codebuild-demo \
-          --zip-file fileb://function.zip
+  commands:
+    - echo "Deploying to Lambda"
+    - aws lambda update-function-code --function-name lambda-codebuild-demo --zip-file fileb://function.zip
+
